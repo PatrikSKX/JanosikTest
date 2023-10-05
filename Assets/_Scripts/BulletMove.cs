@@ -42,7 +42,6 @@ public class BulletMove : MonoBehaviour
 
         if (collider.tag.Equals("Wall"))
         {
-            Debug.Log("sTENA");
             GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(effect, 0.2f);
             Destroy(gameObject);

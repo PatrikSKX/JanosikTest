@@ -8,6 +8,9 @@ public class FireBullet : MonoBehaviour
     public GameObject bullet;
     private int damage = 0;
     private float moveSpeed = 10f;
+    [SerializeField]
+    private Animator animator;
+    //public GameObject fireEffect;
     // Start is called before the first frame update
 
     public void SetDamage(int value)
@@ -18,7 +21,10 @@ public class FireBullet : MonoBehaviour
     public void Fire()
     {
         GameObject bulletObj = Instantiate(bullet, transform.position, transform.rotation);
-        
+        animator.SetTrigger("Fired");
+        //GameObject effect = Instantiate(fireEffect, transform.position, transform.rotation);
+        //Destroy(effect, 0.2f);
+
         BulletMove bulletScript = bulletObj.GetComponent<BulletMove>();
         bulletScript.SetDamage(damage);
 

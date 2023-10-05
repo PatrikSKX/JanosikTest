@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d2dec9a8efe1b478404b0372122a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 7899858070679700711, guid: d78366500bbbbf34abfca40748b0ceab, type: 3}
+  hitEffect: {fileID: 6407639509322706032, guid: 79b1e266ef3d1144790b343863e20d71, type: 3}
 --- !u!95 &3469430072258342794
 Animator:
   serializedVersion: 5
