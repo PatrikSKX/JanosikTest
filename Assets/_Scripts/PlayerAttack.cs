@@ -64,8 +64,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(timeToAttack);
         attacking = false;
         attack.gameObject.SetActive(attacking);
-
-
+        attack.attacked = false;
     }
 
 

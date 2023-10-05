@@ -7,8 +7,8 @@ public class SetCollisionAttack : MonoBehaviour
     public int damage = 3;
     public EnemyCollisionAttack attackArea;
     public PlayerAwerness playerAwarness;
-    public float cooldown = 0;
-    public float attackCooldown = 0.5f;
+    //public float cooldown = 0;
+    public float attackCooldown = 1f;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
     private bool attacking = false;
@@ -41,6 +41,7 @@ public class SetCollisionAttack : MonoBehaviour
         yield return new WaitForSeconds(timeToAttack);
         attacking = false;
         attackArea.gameObject.SetActive(attacking);
+        attackArea.attacked = false;
 
     }
 }

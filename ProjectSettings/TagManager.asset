@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy_Hog
+  - Enemy_Drab
+  - Enemy_Zbojnik
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -12,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
+  - AttackLayer
+  - WallLayer
   - 
   - 
   - 

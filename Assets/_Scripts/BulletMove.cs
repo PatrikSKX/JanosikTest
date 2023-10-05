@@ -29,7 +29,7 @@ public class BulletMove : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health>() != null)
+        if (collider.tag.StartsWith("Enemy_"))
         {
             Health health = collider.GetComponent<Health>();
             health.Damage(damage);
@@ -40,8 +40,9 @@ public class BulletMove : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collider.GetComponent<TilemapCollider2D>() != null) 
+        if (collider.tag.Equals("Wall"))
         {
+            Debug.Log("sTENA");
             GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(effect, 0.2f);
             Destroy(gameObject);

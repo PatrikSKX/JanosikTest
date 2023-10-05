@@ -6,16 +6,15 @@ public class EnemyCollisionAttack : MonoBehaviour
 {
 
     private int damage = 0;
+    public bool attacked = false;
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health>() != null)
+        if (collider.tag.Equals("Player") && !attacked)
         {
-            if (collider.GetComponent<MoveScript>() != null)
-            {
+                attacked = true;
                 Health health = collider.GetComponent<Health>();
                 health.Damage(damage);
                 health.InvokeKnockBack(gameObject.transform.position);
-            }
         }
     }
 

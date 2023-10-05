@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerAwarness = GetComponent<PlayerAwerness>();
+        playerAwarness = GetComponentInChildren<PlayerAwerness>();
         animator = GetComponent<Animator>();
 
     }

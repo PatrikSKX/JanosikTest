@@ -11,6 +11,8 @@ public class PlayerAwerness : MonoBehaviour
     private float playerAwarenessDistance;
 
     private Transform player;
+    //[SerializeField]
+    //private new Collider2D collider;
 
     private void Awake()
     {
@@ -18,18 +20,41 @@ public class PlayerAwerness : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Vector2 enemyToPlayerVector = player.position - transform.position;
-        directionToPlayer = enemyToPlayerVector.normalized;
+    //void Update()
+    //{
+    //    Vector2 enemyToPlayerVector = player.position - transform.position;
+    //    directionToPlayer = enemyToPlayerVector.normalized;
 
-        if (enemyToPlayerVector.magnitude <= playerAwarenessDistance)
+    //    if (enemyToPlayerVector.magnitude <= playerAwarenessDistance)
+    //    {
+    //        AwareOfPlayer = true;
+    //    }
+    //    else
+    //    {
+    //        AwareOfPlayer = false;
+    //    }
+    //}
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag.Equals("Player"))
         {
+            Vector2 enemyToPlayerVector = player.position - transform.position;
+            directionToPlayer = enemyToPlayerVector.normalized;
             AwareOfPlayer = true;
         }
-        else
+    }
+    public void OnTriggerStay2D(Collider2D collider)
+    {
+        if (collider.tag.Equals("Player"))
         {
-            AwareOfPlayer = false;
+            Vector2 enemyToPlayerVector = player.position - transform.position;
+            directionToPlayer = enemyToPlayerVector.normalized;
+            AwareOfPlayer = true;
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D collider)
+    {
+        AwareOfPlayer = false;
     }
 }

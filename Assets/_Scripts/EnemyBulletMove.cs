@@ -27,19 +27,16 @@ public class EnemyBulletMove : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.GetComponent<Health>() != null)
+        if (collider.tag.Equals("Player"))
         {
-            if (collider.GetComponent<MoveScript>() != null)
-            {
-                Health health = collider.GetComponent<Health>();
-                health.Damage(damage);
-                health.InvokeKnockBack(gameObject.transform.position);
-            }
+            Health health = collider.GetComponent<Health>();
+            health.Damage(damage);
+            health.InvokeKnockBack(gameObject.transform.position);
             Destroy(gameObject);
 
         }
 
-        if (collider.GetComponent<TilemapCollider2D>() != null)
+        if (collider.tag.Equals("Wall") || collider.tag.StartsWith("Enemy_"))
         {
             Destroy(gameObject);
         }
