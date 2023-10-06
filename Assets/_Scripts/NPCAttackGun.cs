@@ -10,8 +10,13 @@ public class NPCAttackGun : MonoBehaviour
     public float attackCooldown = 2;
     public PlayerAwerness playerAwarness;
     public CoolDownHandler cdh;
-
     private bool canAttack = true;
+    public float burstcooldown = 0.1f;
+    [SerializeField]
+    private bool burst = false;
+    [SerializeField]
+    private int burstSize = 5;
+    private int bulletCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +28,28 @@ public class NPCAttackGun : MonoBehaviour
     {
         if (playerAwarness.AwareOfPlayer && canAttack)
         {
-            Attack();
-            canAttack = false;
-            StartCoroutine(cdh.SimpleCooldown(attackCooldown, (bool result) => canAttack = result));
+            if (burst)
+            {
+                if (bulletCount == burstSize)
+                {
+                    canAttack = false;
+                    StartCoroutine(cdh.SimpleCooldown(attackCooldown, (bool result) => canAttack = result));
+                    bulletCount = 0;
+                }
+                else
+                {
+                    Attack();
+                    canAttack = false;
+                    StartCoroutine(cdh.SimpleCooldown(burstcooldown, (bool result) => canAttack = result));
+                    bulletCount++;
+                }
+            }
+            else
+            {
+                Attack();
+                canAttack = false;
+                StartCoroutine(cdh.SimpleCooldown(attackCooldown, (bool result) => canAttack = result));
+            }
         }
 
 
