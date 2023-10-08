@@ -6,11 +6,11 @@ public class WeaponAimNPC : MonoBehaviour
 {
     // Start is called before the first frame update
     public SpriteRenderer characterSprite, weaponSprite;
-    public Rigidbody2D rb;
+    public PlayerAwerness pa;
     // Update is called once per frame
     void Update()
     {
-        Vector2 dir = new Vector2 (rb.velocity.x, rb.velocity.y);
+        Vector2 dir = new Vector2 (pa.directionToPlayer.x, pa.directionToPlayer.y);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = rotation;

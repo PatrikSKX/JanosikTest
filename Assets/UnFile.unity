@@ -339,7 +339,7 @@ Transform:
   m_GameObject: {fileID: 254162175}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -641,7 +641,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536532431}
-  - component: {fileID: 536532430}
   - component: {fileID: 536532428}
   - component: {fileID: 536532432}
   - component: {fileID: 536532435}
@@ -651,13 +650,15 @@ GameObject:
   - component: {fileID: 536532437}
   - component: {fileID: 536532439}
   - component: {fileID: 536532438}
+  - component: {fileID: 536532441}
+  - component: {fileID: 536532440}
   m_Layer: 0
   m_Name: EnemyZbojnik
   m_TagString: Enemy_Zbojnik
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &536532428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -710,20 +711,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &536532430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536532427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3150f47630214f4aad9a7d5c37b64d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  playerAwarness: {fileID: 536532438}
 --- !u!4 &536532431
 Transform:
   m_ObjectHideFlags: 0
@@ -855,7 +842,7 @@ MonoBehaviour:
   OnBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 536532440}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -867,7 +854,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 536532430}
+      - m_Target: {fileID: 536532438}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -882,7 +869,7 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 536532440}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -894,7 +881,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 536532430}
+      - m_Target: {fileID: 536532438}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -966,6 +953,49 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.3109336}
   serializedVersion: 2
   m_Radius: 53.884506
+--- !u!114 &536532440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536532427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1060efd567782040bf7d88f70be9977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1855553173}
+  speed: 3
+  nextWaypointDistance: 3
+--- !u!114 &536532441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536532427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!114 &568915545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,7 +1099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 2015501504}
   weaponSprite: {fileID: 1763491941}
-  rb: {fileID: 2015501503}
+  pa: {fileID: 2015501497}
 --- !u!1 &606792617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
       propertyPath: m_TagString
@@ -1282,9 +1312,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1572404725}
-    - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1572404724}
     - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
       insertIndex: -1
@@ -1304,6 +1331,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1572404738}
+    - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1572404742}
+    - targetCorrespondingSourceObject: {fileID: 3376824787750553581, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1572404743}
   m_SourcePrefab: {fileID: 100100000, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
 --- !u!1 &759640230
 GameObject:
@@ -1596,7 +1629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &991289121
 Transform:
   m_ObjectHideFlags: 0
@@ -2444,7 +2477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 2108553378}
   weaponSprite: {fileID: 759640232}
-  rb: {fileID: 2108553377}
+  pa: {fileID: 2108553384}
 --- !u!1 &1421210229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,6 +2584,93 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1452764125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452764127}
+  - component: {fileID: 1452764126}
+  m_Layer: 0
+  m_Name: A*
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452764126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452764125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAIIexW33HEdQIAAC4FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zmzAQ/SsenWsPEH/21hLH6SGJJ24nFy4CLUZjITGSiO1k/N+7EmCIOz15vW/ffrxd8Um4NBVkVumN5uxJMSDfR8TZ5NuoBx/hRPdK7vgHdDFvnNnCBVEf80otV+gPHc2oEqzm2Q+5Fy44QGctea50uWZ7iJWxBt05FQYQ0so6tkTX54ic8Ge8cpQzWtHCWR9orYLRBc0MpAXdh4azyXIRzefzacsIp5NoOZsG87AlNrxaZoKWFTA3RE9fzCfLlri6myx9qMQR26hgErmaSghu2g6JPVdegZhWpsb5MIBxihP7tkKfrwC+L6zrf0h/yXMDthVE0/M91yhdk5f8VI2eJTWHpr93KmpXKZrNfV9N0qd/8HHo4Vyr8rGrGwauhi14dnil54waOxB86L4ftO5lOlJxoKmAtwLks9poVUuGoNW1o9YGovv+73W0uIDs0PubVm+cddXr3u23266b4eKnP8WCl6nXfto4dkJ5xf1RgMbt/MKG/cmYNgV6XRd/DPym++FttcAD18Yi1E4pXXupqrULJWuvmZumtrHSEvQwQwWSCnveYh57u8Mb7P+sB+qeUVu9xbrXcUPx7j4+CG6grTpet2UKdXwCU7zUVnAJvdQOeEahYiVlc2LmK+hYu1rnNBuw9jVnX0+LsFUaRulqFi4jBktKx3ezxTTMo2mQLrJFnubE3x6XOCYV26bPVh3cmuyTS7yz7uMy2mha+Wtnmh43/KNUQ8m5zNUu0wDypUnRAQY0VsGnydaMo0A7sJZLv3DymRChsgOw5Foz8aOuT1bTpM+SkIq/K+s8CYn95yQhzn095q2Gdw5HV/zKu5DLX1BLAwQUAAAICAAACCHs5NiKmm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UoplkqFRkqWpoYVRSqpFYqKusam5iWGakYlBknmyeVpSmlIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsVt9xxHUCAAAuBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHs5NiKmm0AAAB4AAAACQAkAAAAAAAAAAAAAADCAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHoDAAAAAA==
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1452764127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452764125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.5, y: 14.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1537444778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33819,7 +33939,7 @@ MonoBehaviour:
   OnBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1572404725}
+      - m_Target: {fileID: 1572404739}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -33831,7 +33951,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1572404743}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -33846,7 +33966,7 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1572404725}
+      - m_Target: {fileID: 1572404739}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -33858,7 +33978,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1572404743}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -33905,20 +34025,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   animator: {fileID: 1572404723}
---- !u!114 &1572404725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572404721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3150f47630214f4aad9a7d5c37b64d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3.5
-  playerAwarness: {fileID: 1572404739}
 --- !u!50 &1572404730 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2652996237701603911, guid: d70f3c9d36b0e9643a9894848a9c9adc, type: 3}
@@ -34006,6 +34112,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAwarenessDistance: 0
+--- !u!114 &1572404742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572404721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &1572404743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572404721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1060efd567782040bf7d88f70be9977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1855553173}
+  speed: 3.5
+  nextWaypointDistance: 3
 --- !u!1 &1635326461
 GameObject:
   m_ObjectHideFlags: 0
@@ -34023,7 +34172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1635326462
 Transform:
   m_ObjectHideFlags: 0
@@ -34054,7 +34203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  setcooldown: 1
+  setcooldown: 0.5
   attack: {fileID: 254162177}
   weaponAnim: {fileID: 1421210231}
   cdh: {fileID: 1855553177}
@@ -34121,7 +34270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSprite: {fileID: 536532428}
   weaponSprite: {fileID: 939503014}
-  rb: {fileID: 536532432}
+  pa: {fileID: 536532438}
 --- !u!114 &1664171012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35123,7 +35272,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2015501506}
-  - component: {fileID: 2015501505}
   - component: {fileID: 2015501504}
   - component: {fileID: 2015501503}
   - component: {fileID: 2015501502}
@@ -35133,6 +35281,8 @@ GameObject:
   - component: {fileID: 2015501498}
   - component: {fileID: 2015501497}
   - component: {fileID: 2015501496}
+  - component: {fileID: 2015501507}
+  - component: {fileID: 2015501508}
   m_Layer: 0
   m_Name: EnemyMagyarLegionar
   m_TagString: Enemy_Drab
@@ -35218,7 +35368,7 @@ MonoBehaviour:
   OnBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015501497}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35230,7 +35380,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2015501505}
+      - m_Target: {fileID: 2015501508}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35245,7 +35395,7 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015501497}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35257,7 +35407,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2015501505}
+      - m_Target: {fileID: 2015501508}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35418,20 +35568,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2015501505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2015501495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3150f47630214f4aad9a7d5c37b64d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  playerAwarness: {fileID: 2015501497}
 --- !u!4 &2015501506
 Transform:
   m_ObjectHideFlags: 0
@@ -35448,6 +35584,49 @@ Transform:
   - {fileID: 590185050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2015501507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015501495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &2015501508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015501495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1060efd567782040bf7d88f70be9977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1855553173}
+  speed: 3
+  nextWaypointDistance: 3
 --- !u!1 &2040606806
 GameObject:
   m_ObjectHideFlags: 0
@@ -35713,7 +35892,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2108553381}
-  - component: {fileID: 2108553380}
   - component: {fileID: 2108553378}
   - component: {fileID: 2108553377}
   - component: {fileID: 2108553376}
@@ -35723,13 +35901,15 @@ GameObject:
   - component: {fileID: 2108553382}
   - component: {fileID: 2108553384}
   - component: {fileID: 2108553383}
+  - component: {fileID: 2108553385}
+  - component: {fileID: 2108553386}
   m_Layer: 0
   m_Name: EnemyDrab
   m_TagString: Enemy_Drab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2108553373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35748,7 +35928,7 @@ MonoBehaviour:
   OnBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2108553384}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35760,7 +35940,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2108553380}
+      - m_Target: {fileID: 2108553386}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35775,7 +35955,7 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2108553384}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35787,7 +35967,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2108553380}
+      - m_Target: {fileID: 2108553386}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -35948,20 +36128,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2108553380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108553372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3150f47630214f4aad9a7d5c37b64d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  playerAwarness: {fileID: 2108553384}
 --- !u!4 &2108553381
 Transform:
   m_ObjectHideFlags: 0
@@ -36038,6 +36204,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAwarenessDistance: 0
+--- !u!114 &2108553385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108553372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &2108553386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108553372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1060efd567782040bf7d88f70be9977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1855553173}
+  speed: 3
+  nextWaypointDistance: 3
 --- !u!1 &2116469327
 GameObject:
   m_ObjectHideFlags: 0
@@ -36932,6 +37141,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1452764127}
   - {fileID: 1537444778}
   - {fileID: 7348568128302604815}
   - {fileID: 4107693928677103072}
