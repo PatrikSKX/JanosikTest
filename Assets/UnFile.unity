@@ -968,6 +968,8 @@ MonoBehaviour:
   target: {fileID: 1855553173}
   speed: 3
   nextWaypointDistance: 3
+  isShooter: 0
+  keepShootingDistance: 0
 --- !u!114 &536532441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34155,6 +34157,8 @@ MonoBehaviour:
   target: {fileID: 1855553173}
   speed: 3.5
   nextWaypointDistance: 3
+  isShooter: 0
+  keepShootingDistance: 0
 --- !u!1 &1635326461
 GameObject:
   m_ObjectHideFlags: 0
@@ -35203,7 +35207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0e5138c86b3a242ba8cd0846f5e63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
   animator: {fileID: 1855553174}
 --- !u!114 &1855553177
 MonoBehaviour:
@@ -35627,6 +35631,8 @@ MonoBehaviour:
   target: {fileID: 1855553173}
   speed: 3
   nextWaypointDistance: 3
+  isShooter: 1
+  keepShootingDistance: 5
 --- !u!1 &2040606806
 GameObject:
   m_ObjectHideFlags: 0
@@ -36247,6 +36253,8 @@ MonoBehaviour:
   target: {fileID: 1855553173}
   speed: 3
   nextWaypointDistance: 3
+  isShooter: 1
+  keepShootingDistance: 5
 --- !u!1 &2116469327
 GameObject:
   m_ObjectHideFlags: 0

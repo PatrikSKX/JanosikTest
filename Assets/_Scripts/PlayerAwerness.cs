@@ -6,6 +6,7 @@ public class PlayerAwerness : MonoBehaviour
 {
     public bool AwareOfPlayer { get; private set; }
     public Vector2 directionToPlayer { get; private set; }
+    public Vector2 enemyToPlayerVector { get; private set; }
 
     [SerializeField]
     private float playerAwarenessDistance;
@@ -38,7 +39,7 @@ public class PlayerAwerness : MonoBehaviour
     {
         if (collider.tag.Equals("Player"))
         {
-            Vector2 enemyToPlayerVector = player.position - transform.position;
+            enemyToPlayerVector = player.position - transform.position;
             directionToPlayer = enemyToPlayerVector.normalized;
             AwareOfPlayer = true;
         }
@@ -47,7 +48,7 @@ public class PlayerAwerness : MonoBehaviour
     {
         if (collider.tag.Equals("Player"))
         {
-            Vector2 enemyToPlayerVector = player.position - transform.position;
+            enemyToPlayerVector = player.position - transform.position;
             directionToPlayer = enemyToPlayerVector.normalized;
             AwareOfPlayer = true;
         }
