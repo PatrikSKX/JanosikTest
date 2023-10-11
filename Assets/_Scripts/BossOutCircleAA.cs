@@ -8,8 +8,6 @@ public class BossOutCircleAA : MonoBehaviour
     public bool attacked = false;
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log(Vector2.Distance(collider.transform.position, transform.position));
-        
         if (collider.tag.Equals("Player") && Vector2.Distance(collider.transform.position, transform.position) > 0.75f)
         {
             attacked = true;

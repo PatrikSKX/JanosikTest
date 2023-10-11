@@ -5,14 +5,22 @@ using UnityEngine;
 public class DefaultBossAA : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    private int damage = 0;
+    public bool attacked = false;
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        
+
+        if (collider.tag.Equals("Player"))
+        {
+            attacked = true;
+            Health health = collider.GetComponent<Health>();
+            health.Damage(damage);
+            health.InvokeKnockBack(gameObject.transform.position);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDamage(int value)
     {
-        
+        damage = value;
     }
 }

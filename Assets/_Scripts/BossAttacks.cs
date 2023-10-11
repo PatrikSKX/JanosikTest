@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BossAttacks : MonoBehaviour
 {
     public CircleCollider2D weapon1At1;
     public PolygonCollider2D weapon1At2;
+    public Rigidbody2D boss;
+    public Rigidbody2D player;
+    public Transform weaponAim;
+    public GameObject groundExplosion;
+
+    private Quaternion defRotation;
+    
     // Start is called before the first frame update
     public void Attack1_enable()
     {
@@ -14,5 +22,23 @@ public class BossAttacks : MonoBehaviour
     public void Attack1_disable()
     {
         weapon1At1.enabled = false;
+    }
+    public void Attack2_enable()
+    {
+        weapon1At2.enabled = true;
+        groundExplosion.SetActive(true);
+    }
+    public void Attack2_disable() {
+        weapon1At2.enabled=false;
+        weaponAim.transform.rotation = defRotation;
+        groundExplosion.SetActive(false);
+    }
+    public void Attack2_aim() {
+        defRotation = weaponAim.transform.rotation;
+        Vector2 direction = player.position - boss.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        // Calculate the rotation in degrees
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        weaponAim.transform.rotation = rotation;
     }
 }
