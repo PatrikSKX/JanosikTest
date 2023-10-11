@@ -39,6 +39,15 @@ public class BulletMove : MonoBehaviour
             Destroy(effect, 0.2f);
             Destroy(gameObject);
         }
+        if (collider.tag.StartsWith("Boss_"))
+        {
+            BossHealth health = collider.GetComponent<BossHealth>();
+            health.Damage(damage);
+
+            GameObject effect = Instantiate(hitEffect, transform.position, transform.rotation);
+            Destroy(effect, 0.2f);
+            Destroy(gameObject);
+        }
 
         if (collider.tag.Equals("Wall"))
         {

@@ -9,6 +9,7 @@ TagManager:
   - Enemy_Zbojnik
   - Wall
   - Enemy_Legionar
+  - Boss_1
   layers:
   - Default
   - TransparentFX
