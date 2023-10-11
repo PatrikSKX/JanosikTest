@@ -14,12 +14,14 @@ public class BossLogic : StateMachineBehaviour
     private bool reachedEnDOfPath = false;
     private Vector2 direction;
     public float nextWaypointDistance = 3;
+    BossAttacks attacks;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         seeker = animator.GetComponent<Seeker>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
+        attacks = animator.GetComponent<BossAttacks>();
         UpdatePath();
     }
 
@@ -28,12 +30,12 @@ public class BossLogic : StateMachineBehaviour
     {
         if (Time.time > nextUpdate)
         {
-            UpdatePath();
+            //UpdatePath();
             nextUpdate = Time.time + 0.5f;
         }
-        Move();
+        //Move();
         if (Vector2.Distance(rb.position, player.position) < 3) {
-            Debug.Log("attack");
+            //Debug.Log("attack");
         }
         //if choice and far -> rush
         //if choice and out of range -> switch weapon
@@ -52,6 +54,7 @@ public class BossLogic : StateMachineBehaviour
         seeker.StartPath(rb.position, player.position, OnPathComplete);
         currentWaypoint = 0;
     }
+
     private void OnPathComplete(Pathfinding.Path p)
     {
         if (!p.error)
