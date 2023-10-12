@@ -7,6 +7,7 @@ public class BossAttacks : MonoBehaviour
 {
     public CircleCollider2D weapon1At1;
     public PolygonCollider2D weapon1At2;
+    public CircleCollider2D rushAtck;
     public Rigidbody2D boss;
     public Rigidbody2D player;
     public Transform weaponAim;
@@ -41,4 +42,17 @@ public class BossAttacks : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
         weaponAim.transform.rotation = rotation;
     }
+
+    public void Rush_enable()
+    {
+        rushAtck.enabled = true;
+        // enable dust
+    }
+
+    public void Rush_disable()
+    {
+        rushAtck.enabled = false;
+        // disable dust
+    }
+
 }

@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Enemy_Legionar
   - Boss_1
+  - Boss_1_Ground
   layers:
   - Default
   - TransparentFX
