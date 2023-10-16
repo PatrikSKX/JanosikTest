@@ -16,6 +16,7 @@ public class Boss2Logic : StateMachineBehaviour
     private Vector2 direction;
     public float nextWaypointDistance = 3;
     private float nextUpdate = 0f;
+    private float nextChoice = 0f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -47,6 +48,18 @@ public class Boss2Logic : StateMachineBehaviour
             animator.SetFloat("Horizontal", direction.x);
             animator.SetFloat("Vertical", direction.y);
         }
+        if (Time.time > nextChoice)
+        {
+            if (Vector2.Distance(rb.position, player.position) > 3f)
+            {
+                int randomChoice = Random.Range(0, 10);
+                Debug.Log(randomChoice);
+                if (randomChoice == 0 && animator.GetInteger("RushCounter") == 3)
+                    animator.SetInteger("RushCounter", 0);
+            }
+            nextChoice = Time.time + 0.15f;
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

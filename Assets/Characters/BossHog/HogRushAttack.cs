@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.XR;
 
-public class RushAttack : StateMachineBehaviour
+public class HogRushAttack : StateMachineBehaviour
 {
     Transform player;
     Rigidbody2D rb;
     SpriteRenderer dustGround;
-    CircleCollider2D rushAoe;
     Vector2 playerPos;
+    CircleCollider2D rushAoe;
     float timeEnd;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -17,12 +17,10 @@ public class RushAttack : StateMachineBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
-        // TODO mozno cez tag
-        rb.bodyType = RigidbodyType2D.Dynamic;
-        timeEnd = Time.time + 2f;
-        dustGround = animator.GetComponentInChildren<Transform>().Find("MeleeWeapon").Find("Dust1").GetComponent<SpriteRenderer>();
+        dustGround = animator.GetComponentInChildren<Transform>().Find("Dust1").GetComponent<SpriteRenderer>();
+        rushAoe = animator.GetComponentInChildren<Transform>().Find("AoEarea").GetComponent<CircleCollider2D>();
         dustGround.enabled = true;
-        rushAoe = animator.GetComponentInChildren<Transform>().Find("MeleeWeapon").Find("RushAttack").GetComponent<CircleCollider2D>();
+        timeEnd = Time.time + 2f;
         playerPos = new Vector2(player.position.x, player.position.y);
         Vector2 direction = (playerPos - rb.position).normalized;
         playerPos += direction;
@@ -34,16 +32,27 @@ public class RushAttack : StateMachineBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         Vector2 direction = (playerPos - rb.position).normalized;
         rb.velocity = direction * 8f;
-        if (Vector2.Distance(playerPos, rb.position) < 0.5 || Time.time > timeEnd) 
+        if (Vector2.Distance(playerPos, rb.position) < 0.5 || Time.time > timeEnd)
         {
-            animator.SetBool("RushAttack", false);
+            if (animator.GetInteger("RushCounter") == 2)
+            {
+                animator.SetTrigger("IsOnCooldown");
+                rb.velocity = Vector2.zero;
+            }
+            else
+                animator.SetTrigger("RushEnd");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        rushAoe.enabled = false;
+        animator.ResetTrigger("RushEnd");
+        animator.ResetTrigger("IsOnCooldown");
         dustGround.enabled = false;
+        rushAoe.enabled = false;
+        int count = animator.GetInteger("RushCounter");
+        animator.SetInteger("RushCounter", count+ 1);
     }
+
 }
