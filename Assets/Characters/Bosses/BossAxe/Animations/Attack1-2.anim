@@ -36,7 +36,7 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.1333334
+        time: 1.1333333
         value: {x: 0, y: 0, z: -1.735}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -47,7 +47,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -71,8 +71,8 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.1333334
-        value: {x: 7.4899993, y: 3.7699993, z: 0.23229998}
+        time: 1.1333333
+        value: {x: 7.49, y: 3.77, z: 0.23229998}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -82,7 +82,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
@@ -98,6 +98,27 @@ AnimationClip:
       value: {fileID: 21300000, guid: 3a539aa27fab43f418b4d5b08e74b038, type: 3}
     attribute: m_Sprite
     path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0.26666668
+      value: {fileID: 21300000, guid: 933a164f47b89e0478258193ac3e83b5, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: aff7166fee394544cae70557b5706e21, type: 3}
+    - time: 0.4
+      value: {fileID: 21300000, guid: 557e7bc1a01ae024a80c55efeba11942, type: 3}
+    - time: 0.46666667
+      value: {fileID: 21300000, guid: 5e78589506b82fe4fa6de33e58a841d7, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: ec7c89c9bb4149442beb33b696b87580, type: 3}
+    - time: 0.8
+      value: {fileID: 21300000, guid: d3dcd91c418201d499c24ba239bbafb7, type: 3}
+    - time: 1.1333334
+      value: {fileID: 21300000, guid: 5e78589506b82fe4fa6de33e58a841d7, type: 3}
+    attribute: m_Sprite
+    path: MeleeWeapon/GroundBreak
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -124,28 +145,7 @@ AnimationClip:
     - time: 1.0666667
       value: {fileID: 21300000, guid: 8bbe61fda4a785e4d81a556084e4ab98, type: 3}
     attribute: m_Sprite
-    path: MeleeWeapon/pixil-frame-0(4)
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  - serializedVersion: 2
-    curve:
-    - time: 0.26666668
-      value: {fileID: 21300000, guid: 933a164f47b89e0478258193ac3e83b5, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: aff7166fee394544cae70557b5706e21, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: 557e7bc1a01ae024a80c55efeba11942, type: 3}
-    - time: 0.46666667
-      value: {fileID: 21300000, guid: 5e78589506b82fe4fa6de33e58a841d7, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: ec7c89c9bb4149442beb33b696b87580, type: 3}
-    - time: 0.8
-      value: {fileID: 21300000, guid: d3dcd91c418201d499c24ba239bbafb7, type: 3}
-    - time: 1.1333334
-      value: {fileID: 21300000, guid: 5e78589506b82fe4fa6de33e58a841d7, type: 3}
-    attribute: m_Sprite
-    path: MeleeWeapon/GroundBreak
+    path: MeleeWeapon/Axe
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -157,7 +157,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2691988170
+      path: 3722562260
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -166,7 +166,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2691988170
+      path: 3722562260
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -184,7 +184,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2691988170
+      path: 3995052370
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -193,7 +193,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3995052370
+      path: 3722562260
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -206,16 +206,6 @@ AnimationClip:
     - {fileID: 21300000, guid: 3a539aa27fab43f418b4d5b08e74b038, type: 3}
     - {fileID: 21300000, guid: 3a539aa27fab43f418b4d5b08e74b038, type: 3}
     - {fileID: 21300000, guid: 3a539aa27fab43f418b4d5b08e74b038, type: 3}
-    - {fileID: 21300000, guid: 8bbe61fda4a785e4d81a556084e4ab98, type: 3}
-    - {fileID: 21300000, guid: 2283597c09b203543889d1b55b2ff5c0, type: 3}
-    - {fileID: 21300000, guid: 0cf782c0ea5112c49bf7edd9f12c7e70, type: 3}
-    - {fileID: 21300000, guid: 237e4e6323a231e4c9d5a5bc26fe4b9f, type: 3}
-    - {fileID: 21300000, guid: 7bb474e191f335f42a22ec5462b4f263, type: 3}
-    - {fileID: 21300000, guid: 7bb474e191f335f42a22ec5462b4f263, type: 3}
-    - {fileID: 21300000, guid: 237e4e6323a231e4c9d5a5bc26fe4b9f, type: 3}
-    - {fileID: 21300000, guid: 0cf782c0ea5112c49bf7edd9f12c7e70, type: 3}
-    - {fileID: 21300000, guid: 2283597c09b203543889d1b55b2ff5c0, type: 3}
-    - {fileID: 21300000, guid: 8bbe61fda4a785e4d81a556084e4ab98, type: 3}
     - {fileID: 21300000, guid: 933a164f47b89e0478258193ac3e83b5, type: 3}
     - {fileID: 21300000, guid: aff7166fee394544cae70557b5706e21, type: 3}
     - {fileID: 21300000, guid: 557e7bc1a01ae024a80c55efeba11942, type: 3}
@@ -223,6 +213,16 @@ AnimationClip:
     - {fileID: 21300000, guid: ec7c89c9bb4149442beb33b696b87580, type: 3}
     - {fileID: 21300000, guid: d3dcd91c418201d499c24ba239bbafb7, type: 3}
     - {fileID: 21300000, guid: 5e78589506b82fe4fa6de33e58a841d7, type: 3}
+    - {fileID: 21300000, guid: 8bbe61fda4a785e4d81a556084e4ab98, type: 3}
+    - {fileID: 21300000, guid: 2283597c09b203543889d1b55b2ff5c0, type: 3}
+    - {fileID: 21300000, guid: 0cf782c0ea5112c49bf7edd9f12c7e70, type: 3}
+    - {fileID: 21300000, guid: 237e4e6323a231e4c9d5a5bc26fe4b9f, type: 3}
+    - {fileID: 21300000, guid: 7bb474e191f335f42a22ec5462b4f263, type: 3}
+    - {fileID: 21300000, guid: 7bb474e191f335f42a22ec5462b4f263, type: 3}
+    - {fileID: 21300000, guid: 237e4e6323a231e4c9d5a5bc26fe4b9f, type: 3}
+    - {fileID: 21300000, guid: 0cf782c0ea5112c49bf7edd9f12c7e70, type: 3}
+    - {fileID: 21300000, guid: 2283597c09b203543889d1b55b2ff5c0, type: 3}
+    - {fileID: 21300000, guid: 8bbe61fda4a785e4d81a556084e4ab98, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -250,105 +250,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.1333334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: MeleeWeapon/pixil-frame-0(4)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.1333334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.y
-    path: MeleeWeapon/pixil-frame-0(4)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: -1.735
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.26666668
-        value: -90.39
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.1333334
-        value: -1.735
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.z
-    path: MeleeWeapon/pixil-frame-0(4)
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: 7.4899993
         inSlope: 0
         outSlope: 0
@@ -366,8 +267,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.1333334
-        value: 7.4899993
+        time: 1.1333333
+        value: 7.49
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -378,7 +279,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -405,8 +306,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.1333334
-        value: 3.7699993
+        time: 1.1333333
+        value: 3.77
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -417,7 +318,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -435,7 +336,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.1333334
+        time: 1.1333333
         value: 0.23229998
         inSlope: 0
         outSlope: 0
@@ -447,7 +348,106 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: MeleeWeapon/Axe
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: MeleeWeapon/Axe
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -1.735
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.26666668
+        value: -90.39
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1333333
+        value: -1.735
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -459,8 +459,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: MeleeWeapon/pixil-frame-0(4)
+    attribute: m_LocalEulerAngles.z
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -472,7 +472,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: MeleeWeapon/pixil-frame-0(4)
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -483,8 +483,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: MeleeWeapon/pixil-frame-0(4)
+    attribute: m_LocalEulerAngles.x
+    path: MeleeWeapon/Axe
     classID: 4
     script: {fileID: 0}
     flags: 0
